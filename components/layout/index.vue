@@ -8,22 +8,11 @@
   </view>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import AppHeader from './app-header.vue';
   import AppBar from './app-bar.vue';
 
-  export default {
-    components: {
-      AppHeader,
-      AppBar,
-    },
-    name: "layout",
-    data() {
-      return {
 
-      };
-    }
-  }
 </script>
 
 <style lang="scss">
@@ -34,6 +23,9 @@
     
     .app-content {
       flex: 1;
+      flex-grow: 0;
+      padding-top: calc(var(--status-bar-height) + $layout-status-header-height);
+      padding-bottom: $layout-status-bar-height;
     }
   }
 </style>

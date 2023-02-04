@@ -1,11 +1,9 @@
 <template>
-	<view class="app">
-		<view class="text-area">
-      <layout>
-        <text>custom content</text>
-      </layout>
-		</view>
-	</view>
+	<layout>
+    <text>custom content</text>
+	  <view class="empty"></view>
+	  <text>custom content</text>
+	</layout>
 </template>
 
 <script>
@@ -32,5 +30,9 @@
   .app {
     width: 100%;
     height: 100%;
+  }
+  .empty {
+    height: 3000px;
+    background: green;
   }
 </style>

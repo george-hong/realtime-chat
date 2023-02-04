@@ -4,20 +4,17 @@
 	</view>
 </template>
 
-<script lang="ts">
-	export default {
-		name:"app-bar",
-		data() {
-			return {
-				
-			};
-		}
-	}
+<script lang="ts" setup>
+
 </script>
 
-<style>
+<style lang="scss">
   .app-bar {
-    height: 50px;
+    width: 100%;
+    height: $layout-status-bar-height;
     background: red;
+    position: fixed;
+    bottom: 0;
+    left: 0;
   }
 </style>

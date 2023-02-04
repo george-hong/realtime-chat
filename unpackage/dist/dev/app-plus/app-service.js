@@ -35,20 +35,24 @@ if (uni.restoreGlobal) {
     __name: "app-header",
     setup(__props) {
       const titleInfo = vue.reactive({
-        leftContent: "left",
-        rightContent: "right",
-        title: "page title"
+        leftContent: "\u5DE6\u4FA7",
+        rightContent: "\u53F3\u4FA7",
+        title: "\u6807\u9898"
       });
       return (_ctx, _cache) => {
         return vue.openBlock(), vue.createElementBlock("view", { class: "app-header" }, [
-          vue.createElementVNode("view", { class: "left" }, [
-            vue.createElementVNode("text", null, vue.toDisplayString(titleInfo.leftContent), 1)
-          ]),
-          vue.createElementVNode("view", { class: "title" }, [
-            vue.createElementVNode("text", null, vue.toDisplayString(titleInfo.title), 1)
-          ]),
-          vue.createElementVNode("view", { class: "right" }, [
-            vue.createElementVNode("text", null, vue.toDisplayString(titleInfo.rightContent), 1)
+          vue.createCommentVNode(" \u81EA\u5B9A\u4E49\u5BFC\u822A\u680F\u65F6\uFF0C\u9876\u90E8\u4F1A\u9677\u5165\u5230\u72B6\u6001\u680F\uFF0C\u7528\u4E00\u4E2A\u7A7A\u7684\u5143\u7D20\u5360\u4F4D\uFF0Chttps://uniapp.dcloud.net.cn/collocation/pages.html#customnav "),
+          vue.createElementVNode("view", { class: "status-bar" }),
+          vue.createElementVNode("view", { class: "content" }, [
+            vue.createElementVNode("view", { class: "left" }, [
+              vue.createElementVNode("text", null, vue.toDisplayString(titleInfo.leftContent), 1)
+            ]),
+            vue.createElementVNode("view", { class: "title" }, [
+              vue.createElementVNode("text", null, vue.toDisplayString(titleInfo.title), 1)
+            ]),
+            vue.createElementVNode("view", { class: "right" }, [
+              vue.createElementVNode("text", null, vue.toDisplayString(titleInfo.rightContent), 1)
+            ])
           ])
         ]);
       };
@@ -62,38 +66,26 @@ if (uni.restoreGlobal) {
     return target;
   };
   const AppHeader = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["__scopeId", "data-v-7429e111"], ["__file", "E:/Project/realtime-chat/\u5B9E\u65F6\u804A\u5929/components/layout/app-header.vue"]]);
-  const _sfc_main$3 = {
-    name: "app-bar",
-    data() {
-      return {};
-    }
-  };
-  function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
+  const _sfc_main$3 = {};
+  function _sfc_render$1(_ctx, _cache) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "app-bar" }, " app-bar ");
   }
-  const AppBar = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$2], ["__scopeId", "data-v-0182d41e"], ["__file", "E:/Project/realtime-chat/\u5B9E\u65F6\u804A\u5929/components/layout/app-bar.vue"]]);
-  const _sfc_main$2 = {
-    components: {
-      AppHeader,
-      AppBar
-    },
-    name: "layout",
-    data() {
-      return {};
+  const AppBar = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$1], ["__scopeId", "data-v-0182d41e"], ["__file", "E:/Project/realtime-chat/\u5B9E\u65F6\u804A\u5929/components/layout/app-bar.vue"]]);
+  const _sfc_main$2 = /* @__PURE__ */ vue.defineComponent({
+    __name: "index",
+    setup(__props) {
+      return (_ctx, _cache) => {
+        return vue.openBlock(), vue.createElementBlock("view", { class: "layout" }, [
+          vue.createVNode(AppHeader),
+          vue.createElementVNode("view", { class: "app-content" }, [
+            vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
+          ]),
+          vue.createVNode(AppBar)
+        ]);
+      };
     }
-  };
-  function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_app_header = vue.resolveComponent("app-header");
-    const _component_app_bar = vue.resolveComponent("app-bar");
-    return vue.openBlock(), vue.createElementBlock("view", { class: "layout" }, [
-      vue.createVNode(_component_app_header),
-      vue.createElementVNode("view", { class: "app-content" }, [
-        vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
-      ]),
-      vue.createVNode(_component_app_bar)
-    ]);
-  }
-  const Layout = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["__scopeId", "data-v-aad600b3"], ["__file", "E:/Project/realtime-chat/\u5B9E\u65F6\u804A\u5929/components/layout/index.vue"]]);
+  });
+  const Layout = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["__scopeId", "data-v-aad600b3"], ["__file", "E:/Project/realtime-chat/\u5B9E\u65F6\u804A\u5929/components/layout/index.vue"]]);
   const _sfc_main$1 = {
     components: {
       Layout
@@ -107,16 +99,14 @@ if (uni.restoreGlobal) {
   };
   function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_layout = vue.resolveComponent("layout");
-    return vue.openBlock(), vue.createElementBlock("view", { class: "app" }, [
-      vue.createElementVNode("view", { class: "text-area" }, [
-        vue.createVNode(_component_layout, null, {
-          default: vue.withCtx(() => [
-            vue.createElementVNode("text", null, "custom content")
-          ]),
-          _: 1
-        })
-      ])
-    ]);
+    return vue.openBlock(), vue.createBlock(_component_layout, null, {
+      default: vue.withCtx(() => [
+        vue.createElementVNode("text", null, "custom content"),
+        vue.createElementVNode("view", { class: "empty" }),
+        vue.createElementVNode("text", null, "custom content")
+      ]),
+      _: 1
+    });
   }
   const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__file", "E:/Project/realtime-chat/\u5B9E\u65F6\u804A\u5929/pages/index/index.vue"]]);
   __definePage("pages/index/index", PagesIndexIndex);
