@@ -4,26 +4,20 @@
     <view class="status-bar"></view>
 		<view class="content">
       <view class="left">
-        <text>{{ titleInfo.leftContent }}</text>
+        <slot name="left"></slot>
       </view>
       <view class="title">
-        <text>{{ titleInfo.title }}</text>
+        <slot name="title"></slot>
       </view>
       <view class="right">
-        <text>{{ titleInfo.rightContent }}</text>
+        <slot name="right"></slot>
       </view>
     </view>
 	</view>
 </template>
 
 <script lang="ts" setup>
-  import { reactive } from 'vue';
-  
-  const titleInfo = reactive({
-    leftContent: '左侧',
-    rightContent: '右侧',
-    title: '标题',
-  });
+
 </script>
 
 <style lang="scss">
@@ -49,14 +43,14 @@
         justify-content: center;
         align-items: center;
         height: $layout-status-header-height;
-        
-        > text {
-          font-size: $font-size-title;
-        }
+      }
+      
+      text {
+        font-size: $font-size-title;
       }
       
       .left, .right {
-        width: 100px;
+        width: 150rpx;
       }
       
       .title {

@@ -1,10 +1,20 @@
 <template>
   <view class="layout">
-    <app-header></app-header>
+    <app-header>
+      <template #left>
+        <slot name="left"></slot>
+      </template>
+      <template #title>
+        <slot name="title"></slot>
+      </template>
+      <template #right>
+        <slot name="right"></slot>
+      </template>
+    </app-header>
     <view class="app-content">
       <slot></slot>
     </view>
-    <app-bar></app-bar>
+    <app-bar :on-switch="props.onSwitch"></app-bar>
   </view>
 </template>
 
@@ -12,6 +22,9 @@
   import AppHeader from './app-header.vue';
   import AppBar from './app-bar.vue';
 
+  const props = defineProps<{
+    onSwitch?: (key: string) => unknown,
+  }>();
 
 </script>
 

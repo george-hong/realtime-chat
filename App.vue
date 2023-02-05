@@ -14,13 +14,15 @@
 
 <style lang="scss">
   /*每个页面公共css */
+  @import 'static/font/iconfont.css';
+  
   html,
   body {
     height: 100%;
   }
   
-  * {
+  view, scroll-view, text {
     box-sizing: border-box;
-    font-size: 24rpx;
+    font-size: $font-size-primary;
   }
 </style>

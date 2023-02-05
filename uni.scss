@@ -75,10 +75,12 @@ $uni-font-size-subtitle:26px;
 $uni-color-paragraph: #3F536E; // 文章段落颜色
 $uni-font-size-paragraph:15px;
 
-// 布局组件相关样式
-$layout-status-header-height: 64rpx;
-$layout-status-bar-height: 64rpx;
-
 // 字体大小
-$font-size-primary: 24rpx;
-$font-size-title: 32rpx;
+$font-size-primary: 36rpx;
+$font-size-mini: 24rpx;
+$font-size-title: 48rpx;
+$font-size-large: 48rpx;
+
+// 布局组件相关样式
+$layout-status-header-height: 72rpx;
+$layout-status-bar-height: calc(1px + 30rpx + $font-size-large + $font-size-mini);

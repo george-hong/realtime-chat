@@ -43,13 +43,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 2rem;
+  height: 2.25rem;
 }
-.app-header .content > uni-view > uni-text[data-v-7429e111] {
-  font-size: 1rem;
+.app-header .content uni-text[data-v-7429e111] {
+  font-size: 1.5rem;
 }
 .app-header .content .left[data-v-7429e111], .app-header .content .right[data-v-7429e111] {
-  width: 100px;
+  width: 4.6875rem;
 }
 .app-header .content .title[data-v-7429e111] {
   flex: 1;
@@ -81,11 +81,29 @@
 /* 文章场景相关 */
 .app-bar[data-v-0182d41e] {
   width: 100%;
-  height: 2rem;
-  background: red;
+  background: #FFF;
   position: fixed;
   bottom: 0;
   left: 0;
+  display: flex;
+  border-top: 1px solid #333;
+  padding: 0.375rem;
+}
+.app-bar .menu-item[data-v-0182d41e] {
+  flex: 1;
+}
+.app-bar .menu-item > uni-view[data-v-0182d41e] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.app-bar .menu-item > uni-view .icon[data-v-0182d41e] {
+  font-size: 1.5rem;
+  margin-bottom: 0.1875rem;
+}
+.app-bar .menu-item > uni-view uni-text[data-v-0182d41e] {
+  font-size: 0.75rem;
 }
 /**
  * 这里是uni-app内置的常用样式变量
@@ -120,15 +138,11 @@
 .layout .app-content[data-v-aad600b3] {
   flex: 1;
   flex-grow: 0;
-  padding-top: calc(var(--status-bar-height) + 2rem);
-  padding-bottom: 2rem;
+  padding-top: calc(var(--status-bar-height) + 2.25rem);
+  padding-bottom: calc(1px + 0.9375rem + 1.5rem + 0.75rem);
 }
 
 .app {
     width: 100%;
     height: 100%;
-}
-.empty {
-    height: 3000px;
-    background: green;
 }
