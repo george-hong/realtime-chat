@@ -403,7 +403,16 @@ html,
 body {
   height: 100%;
 }
-uni-view, uni-scroll-view, uni-text {
+uni-text {
   box-sizing: border-box;
   font-size: 1.125rem;
+}
+.single-line {
+  word-break: break-all;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.single-line uni-text {
+  white-space: nowrap;
 }

@@ -21,8 +21,19 @@
     height: 100%;
   }
   
-  view, scroll-view, text {
+  text {
     box-sizing: border-box;
     font-size: $font-size-primary;
+  }
+  
+  .single-line {
+    word-break: break-all;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    
+    text {
+      white-space: nowrap;
+    }
   }
 </style>

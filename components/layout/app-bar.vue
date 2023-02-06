@@ -25,7 +25,7 @@
   
   const menus = [
     {
-      text: '聊天',
+      text: '会话',
       icon: 'chat',
       key: 'chat',
     },
@@ -49,13 +49,12 @@
 <style lang="scss">
   .app-bar {
     width: 100%;
-    // height: $layout-status-bar-height;
     background: #FFF;
     position: fixed;
     bottom: 0;
     left: 0;
     display: flex;
-    border-top: 1px solid #333;
+    border-top: 1px solid $uni-border-color;
     padding: 12rpx;
     
     .menu-item {

@@ -2,17 +2,15 @@
 	<layout
     :on-switch="switchComponent"
   >
-    <KeepAlive>
-      <Contacts v-if="currentComponent === 'contacts'"></Contacts>
-      <Mine v-else-if="currentComponent === 'mine'"></Mine>
-      <Chat v-else></Chat>
-    </KeepAlive>
+   <contacts v-if="currentPageInfo.component === 'contacts'"></contacts>
+    <mine v-else-if="currentPageInfo.component === 'mine'"></mine>
+    <chat v-else></chat>
     
     <template #left>
-      <text>left</text>
+      <text>右侧</text>
     </template>
     <template #title>
-      <text>标题</text>
+      <text>{{ currentPageInfo.title }}</text>
     </template>
     <template #right>
       <text>右侧</text>
@@ -21,17 +19,26 @@
 </template>
 
 <script lang="ts" setup>
-  import Layout from '../../components/layout/index.vue';
-  import Chat from '../../components/chat/chat.vue';
-  import Contacts from '../../components/contacts/contacts.vue';
-  import Mine from '../../components/mine/mine.vue';
   import { ref } from 'vue';
   
-  let currentComponent = ref('chat');
+  const pageInfo = {
+    chat: {
+      component: 'chat',
+      title: '会话',
+    },
+    contacts: {
+      component: 'contacts',
+      title: '通讯录',
+    },
+    mine: {
+      component: 'mine',
+      title: '我的',
+    }
+  };
+  const currentPageInfo = ref(pageInfo.chat);
   
   const switchComponent = (componentName: string) => {
-    currentComponent.value = componentName;
-    console.log(currentComponent.value);
+    currentPageInfo.value = pageInfo[componentName];
   };
   
 </script>
