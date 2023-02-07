@@ -3,9 +3,10 @@
      class="view-list-container"
    >
      <view
+       class="view-list-item"
        v-for="(info, index) in props.infoList"
        :key="index"
-       class="view-list-item"
+       @click="triggerClickEvent($event, info, index)"
      >
        <view
         v-if="info.img"
@@ -57,14 +58,23 @@
 </template>
 
 <script lang="ts" setup>
+  interface IInfoItem {
+    title: string;
+    img?: string;
+    desc?: string;
+    right?: string | { top?: string, bottom?: string };
+  }
+  type TriggerEvent = (event: Event, info: IInfoItem, index: number) => unknown;
+  
   const props = defineProps<{
-    infoList: Array<{
-      title: string;
-      img?: string;
-      desc?: string;
-      right?: string | { top?: string, bottom?: string };
-    }>
+    infoList: Array<IInfoItem>;
+    onClick?: TriggerEvent;
   }>();
+  
+  const emit = defineEmits(['click']);
+  const triggerClickEvent: TriggerEvent = (event, info, index) => {
+    emit('click', { event, info, index });
+  };
 </script>
 
 <style scope lang="scss">

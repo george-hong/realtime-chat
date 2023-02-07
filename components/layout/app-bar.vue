@@ -7,7 +7,10 @@
       @click="switchTo(menu.key)"
     >
       <view>
-        <span :class="['icon', 'iconfont', `icon-${menu.icon}`]"></span>
+        <iconfont
+          :name="menu.icon"
+          class="app-bar-icon"
+        ></iconfont>
       </view>
       <view>
         <text>
@@ -27,7 +30,7 @@
     {
       text: '会话',
       icon: 'chat',
-      key: 'chat',
+      key: 'session',
     },
     {
       text: '通讯录',
@@ -66,7 +69,7 @@
         align-items: center;
         justify-content: center;
         
-        .icon {
+        .app-bar-icon {
           font-size: $font-size-large;
           margin-bottom: 6rpx;
         }

@@ -21,7 +21,7 @@
     height: 100%;
   }
   
-  text {
+  text, input, text-area, select, button, textarea {
     box-sizing: border-box;
     font-size: $font-size-primary;
   }
@@ -34,6 +34,15 @@
     
     text {
       white-space: nowrap;
+    }
+  }
+  
+  button {
+    
+    &.primary {
+      border: none;
+      background: $uni-color-primary;
+      color: #FFF;
     }
   }
 </style>

@@ -5,6 +5,7 @@
 </template>
 
 <script lang="ts" setup>
+  import ViewList from '../common/view-list/view-list.vue';
   import { reactive } from 'vue';
   
   const contacts = reactive([

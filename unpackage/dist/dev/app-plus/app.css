@@ -403,7 +403,7 @@ html,
 body {
   height: 100%;
 }
-uni-text {
+uni-text, uni-input, text-area, select, uni-button, uni-textarea {
   box-sizing: border-box;
   font-size: 1.125rem;
 }
@@ -415,4 +415,9 @@ uni-text {
 }
 .single-line uni-text {
   white-space: nowrap;
+}
+uni-button.primary {
+  border: none;
+  background: #007aff;
+  color: #FFF;
 }

@@ -47,6 +47,7 @@
       
       text {
         font-size: $font-size-title;
+        color: #FFF;
       }
       
       .left, .right {

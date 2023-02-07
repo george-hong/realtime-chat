@@ -1,10 +1,14 @@
 <template>
   <view class="chat-list">
-    <view-list :info-list="infoList"></view-list>
+    <view-list
+      :info-list="infoList"
+      @click="startChat"
+    ></view-list>
   </view>
 </template>
 
 <script lang="ts" setup>
+  import ViewList from '../common/view-list/view-list.vue';
   import { reactive } from 'vue';
   
   const infoList = reactive([
@@ -50,6 +54,12 @@
       },
     }
   ]);
+  
+  const startChat = (event) => {
+    uni.navigateTo({
+      url: '/pages/chat/chat',
+    });
+  };
   
 </script>
 

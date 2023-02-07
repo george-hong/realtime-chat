@@ -11,10 +11,13 @@
         <slot name="right"></slot>
       </template>
     </app-header>
-    <view class="app-content">
+    <view :class="{'app-content': true, 'no-app-bar': props.appBarVisible === false }">
       <slot></slot>
     </view>
-    <app-bar :on-switch="props.onSwitch"></app-bar>
+    <app-bar
+      :on-switch="props.onSwitch"
+      v-if="props.appBarVisible"
+    ></app-bar>
   </view>
 </template>
 
@@ -23,7 +26,8 @@
   import AppBar from './app-bar.vue';
 
   const props = defineProps<{
-    onSwitch?: (key: string) => unknown,
+    onSwitch?: (key: string) => unknown;
+    appBarVisible?: boolean;
   }>();
 
 </script>
@@ -36,9 +40,12 @@
     
     .app-content {
       flex: 1;
-      flex-grow: 0;
       padding-top: calc(var(--status-bar-height) + $layout-status-header-height);
       padding-bottom: $layout-status-bar-height;
+      
+      &.no-app-bar {
+        padding-bottom: 0;
+      }
     }
   }
 </style>

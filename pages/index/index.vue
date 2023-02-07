@@ -1,19 +1,17 @@
 <template>
 	<layout
     :on-switch="switchComponent"
+    app-bar-visible
   >
-   <contacts v-if="currentPageInfo.component === 'contacts'"></contacts>
+    <contacts v-if="currentPageInfo.component === 'contacts'"></contacts>
     <mine v-else-if="currentPageInfo.component === 'mine'"></mine>
-    <chat v-else></chat>
+    <session v-else></session>
     
-    <template #left>
-      <text>右侧</text>
-    </template>
     <template #title>
       <text>{{ currentPageInfo.title }}</text>
     </template>
     <template #right>
-      <text>右侧</text>
+      <text v-if="currentPageInfo.component !== 'mine'">右侧</text>
     </template>
 	</layout>
 </template>
@@ -22,8 +20,8 @@
   import { ref } from 'vue';
   
   const pageInfo = {
-    chat: {
-      component: 'chat',
+    session: {
+      component: 'session',
       title: '会话',
     },
     contacts: {
@@ -35,7 +33,7 @@
       title: '我的',
     }
   };
-  const currentPageInfo = ref(pageInfo.chat);
+  const currentPageInfo = ref(pageInfo.session);
   
   const switchComponent = (componentName: string) => {
     currentPageInfo.value = pageInfo[componentName];
