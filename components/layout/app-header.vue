@@ -3,21 +3,34 @@
     <!-- 自定义导航栏时，顶部会陷入到状态栏，用一个空的元素占位，https://uniapp.dcloud.net.cn/collocation/pages.html#customnav -->
     <view class="status-bar"></view>
 		<view class="content">
-      <view class="left">
-        <slot name="left"></slot>
-      </view>
-      <view class="title">
-        <slot name="title"></slot>
-      </view>
-      <view class="right">
-        <slot name="right"></slot>
+      <view
+        v-for="key in ['left', 'title', 'right']"
+        :key="key"
+        :class="key"
+      >
+        <template v-if="props.headerConfig[key]">
+          <text
+            v-if="props.headerConfig[key].isIcon !== true"
+            @click="props.headerConfig[key].onClick"
+          >{{ props.headerConfig[key].content }}</text>
+          <iconfont
+            v-else
+            :name="props.headerConfig[key].content"
+            @click="props.headerConfig[key].onClick"
+            class="app-header-icon"
+          ></iconfont>
+        </template>
       </view>
     </view>
 	</view>
 </template>
 
 <script lang="ts" setup>
-
+  import { IHeaderConfig } from '../../types/component';
+  
+  const props = defineProps<{
+    headerConfig: IHeaderConfig;
+  }>();
 </script>
 
 <style lang="scss">
@@ -45,17 +58,22 @@
         height: $layout-status-header-height;
       }
       
-      text {
-        font-size: $font-size-title;
-        color: #FFF;
-      }
-      
       .left, .right {
         width: 150rpx;
+        
+        text, .app-header-icon {
+          color: #FFF;
+          font-size: $font-size-primary;
+        }
       }
       
       .title {
         flex: 1;
+        
+        text {
+          font-size: $font-size-title;
+          color: #FFF;
+        }
       }
     }
   }

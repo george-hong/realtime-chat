@@ -23,6 +23,67 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+.message[data-v-49e8e8fa] {
+  width: 100%;
+  margin-bottom: 0.75rem;
+  display: flex;
+}
+.message.reverse[data-v-49e8e8fa] {
+  flex-direction: row-reverse;
+}
+.message.reverse .message-container[data-v-49e8e8fa] {
+  margin: 0 0.75rem 0.75rem 3.375rem;
+  background: greenyellow;
+}
+.message.reverse .message-container[data-v-49e8e8fa]::after {
+  left: 100%;
+  border-color: transparent transparent transparent greenyellow;
+}
+.message .message-container[data-v-49e8e8fa] {
+  margin: 0 3.375rem 0.75rem 0.75rem;
+  padding: 0.375rem;
+  border-radius: 0.25rem;
+  width: auto;
+  background: #fff;
+  position: relative;
+}
+.message .message-container[data-v-49e8e8fa]::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-color: transparent #FFF transparent transparent;
+  border-style: solid;
+  border-width: 0.375rem;
+  display: block;
+  position: absolute;
+  left: -0.75rem;
+  top: 0.9375rem;
+}
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
 .chat-input[data-v-7713cc3c] {
   display: flex;
   flex-direction: column;
@@ -33,17 +94,13 @@
   align-items: flex-start;
 }
 .chat-input .main .chat-page-icon[data-v-7713cc3c] {
-  font-size: 1.5rem;
+  font-size: 1.875rem;
 }
 .chat-input .main > uni-view[data-v-7713cc3c] {
   padding: 0.75rem;
 }
 .chat-input .main .left .icon-box[data-v-7713cc3c] {
   padding: 0.375rem;
-  width: 1.5rem;
-  height: 1.5rem;
-  border: 2px solid #000;
-  border-radius: 50%;
 }
 .chat-input .main .center[data-v-7713cc3c] {
   flex: 1;
@@ -59,7 +116,8 @@
   overflow-y: scroll;
 }
 .chat-input .main .right uni-button[data-v-7713cc3c] {
-  padding: 0.75rem;
+  padding: 0.375rem 0.75rem;
+  margin: 0.375rem 0;
   line-height: 1;
   height: auto;
 }
@@ -110,15 +168,19 @@
   align-items: center;
   height: 2.25rem;
 }
-.app-header .content uni-text[data-v-7429e111] {
-  font-size: 1.5rem;
-  color: #FFF;
-}
 .app-header .content .left[data-v-7429e111], .app-header .content .right[data-v-7429e111] {
   width: 4.6875rem;
 }
+.app-header .content .left uni-text[data-v-7429e111], .app-header .content .left .app-header-icon[data-v-7429e111], .app-header .content .right uni-text[data-v-7429e111], .app-header .content .right .app-header-icon[data-v-7429e111] {
+  color: #FFF;
+  font-size: 1.125rem;
+}
 .app-header .content .title[data-v-7429e111] {
   flex: 1;
+}
+.app-header .content .title uni-text[data-v-7429e111] {
+  font-size: 1.5rem;
+  color: #FFF;
 }
 /**
  * 这里是uni-app内置的常用样式变量
@@ -235,10 +297,15 @@
 /* 透明度 */
 /* 文章场景相关 */
 .chat-container[data-v-0a633310] {
-  height: 100%;
+  height: calc(100vh - 2.25rem - var(--status-bar-height));
   display: flex;
   flex-direction: column;
 }
 .chat-container .chat-view[data-v-0a633310] {
+  overflow-y: scroll;
   flex: 1;
+  background: #F6F6F6;
+}
+.chat-container .chat-view .message-box[data-v-0a633310] {
+  padding: 0.75rem;
 }

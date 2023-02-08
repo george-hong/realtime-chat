@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "1315263",
+      "name": "Switch the voice",
+      "font_class": "84qiehuanyuyin",
+      "unicode": "e6e3",
+      "unicode_decimal": 59107
+    },
+    {
+      "icon_id": "10330992",
+      "name": "voice-assistant",
+      "font_class": "voice-assistant",
+      "unicode": "e6e4",
+      "unicode_decimal": 59108
+    },
+    {
       "icon_id": "16619448",
       "name": "information_add",
       "font_class": "information_add1",

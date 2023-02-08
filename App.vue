@@ -45,4 +45,10 @@
       color: #FFF;
     }
   }
+  
+  img.avatar {
+    width: $avatar-width;
+    height: $avatar-width;
+    border-radius: 8rpx;
+  }
 </style>

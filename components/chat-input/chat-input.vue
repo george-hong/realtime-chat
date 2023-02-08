@@ -4,7 +4,7 @@
       <view class="left">
         <view class="icon-box">
           <iconfont
-            name="voice"
+            name="84qiehuanyuyin"
             class="chat-page-icon"
           ></iconfont>
         </view>
@@ -37,7 +37,7 @@
       align-items: flex-start;
       
       .chat-page-icon {
-        font-size: $font-size-title;
+        font-size: 60rpx;
       }
       
       > view {
@@ -47,10 +47,6 @@
       .left {
         .icon-box {
           padding: $pd1;
-          width: $pd4;
-          height: $pd4;
-          border: 2px solid #000;
-          border-radius: 50%;
         }
       }
       
@@ -72,7 +68,8 @@
       .right {
         
         button {
-          padding: 24rpx;
+          padding: $pd1 $pd2;
+          margin: $pd1 0;
           line-height: 1;
           height: auto;
         }

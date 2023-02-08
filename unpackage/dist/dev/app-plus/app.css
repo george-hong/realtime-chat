@@ -28,9 +28,9 @@
 /*每个页面公共css */
 @font-face {
   font-family: "iconfont"; /* Project id 3880712 */
-  src: url('static/font/iconfont.woff2?t=1675571227417') format('woff2'),
-       url('static/font/iconfont.woff?t=1675571227417') format('woff'),
-       url('static/font/iconfont.ttf?t=1675571227417') format('truetype');
+  src: url('static/font/iconfont.woff2?t=1675823029209') format('woff2'),
+       url('static/font/iconfont.woff?t=1675823029209') format('woff'),
+       url('static/font/iconfont.ttf?t=1675823029209') format('truetype');
 }
 .iconfont {
   font-family: "iconfont" !important;
@@ -38,6 +38,12 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.icon-84qiehuanyuyin:before {
+  content: "\e6e3";
+}
+.icon-voice-assistant:before {
+  content: "\e6e4";
 }
 .icon-information_add1:before {
   content: "\e6d7";
@@ -420,4 +426,9 @@ uni-button.primary {
   border: none;
   background: #007aff;
   color: #FFF;
+}
+img.avatar {
+  width: 2.625rem;
+  height: 2.625rem;
+  border-radius: 0.25rem;
 }

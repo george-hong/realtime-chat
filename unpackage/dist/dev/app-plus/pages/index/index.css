@@ -35,10 +35,6 @@
   width: 3rem;
   padding-right: 0.375rem;
 }
-.view-list-container .view-list-item .img-container img[data-v-150ad610] {
-  width: 2.625rem;
-  height: 2.625rem;
-}
 .view-list-container .view-list-item .info-content[data-v-150ad610] {
   flex: 1;
   overflow: hidden;
@@ -143,15 +139,19 @@
   align-items: center;
   height: 2.25rem;
 }
-.app-header .content uni-text[data-v-7429e111] {
-  font-size: 1.5rem;
-  color: #FFF;
-}
 .app-header .content .left[data-v-7429e111], .app-header .content .right[data-v-7429e111] {
   width: 4.6875rem;
 }
+.app-header .content .left uni-text[data-v-7429e111], .app-header .content .left .app-header-icon[data-v-7429e111], .app-header .content .right uni-text[data-v-7429e111], .app-header .content .right .app-header-icon[data-v-7429e111] {
+  color: #FFF;
+  font-size: 1.125rem;
+}
 .app-header .content .title[data-v-7429e111] {
   flex: 1;
+}
+.app-header .content .title uni-text[data-v-7429e111] {
+  font-size: 1.5rem;
+  color: #FFF;
 }
 /**
  * 这里是uni-app内置的常用样式变量

@@ -12,7 +12,7 @@
         v-if="info.img"
         class="img-container"  
       >
-         <img :src="info.img" />
+         <img class="avatar" :src="info.img" />
        </view>
        <view :class="{ 'info-content': true, 'with-sub-info': !!info.right, 'with-img': !!info.img }">
          <view class="title single-line">
@@ -89,10 +89,6 @@
       .img-container {
         width: 96rpx;
         padding-right: 12rpx;
-        img {
-          width: 84rpx;
-          height: 84rpx;
-        }
       }
       
       .info-content {

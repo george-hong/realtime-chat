@@ -1,16 +1,6 @@
 <template>
   <view class="layout">
-    <app-header>
-      <template #left>
-        <slot name="left"></slot>
-      </template>
-      <template #title>
-        <slot name="title"></slot>
-      </template>
-      <template #right>
-        <slot name="right"></slot>
-      </template>
-    </app-header>
+    <app-header :header-config="props.headerConfig"></app-header>
     <view :class="{'app-content': true, 'no-app-bar': props.appBarVisible === false }">
       <slot></slot>
     </view>
@@ -24,8 +14,10 @@
 <script lang="ts" setup>
   import AppHeader from './app-header.vue';
   import AppBar from './app-bar.vue';
+  import { IHeaderConfig } from '../../types/component';
 
   const props = defineProps<{
+    headerConfig: IHeaderConfig;
     onSwitch?: (key: string) => unknown;
     appBarVisible?: boolean;
   }>();

@@ -31,7 +31,7 @@ if (uni.restoreGlobal) {
 }
 (function(vue, shared) {
   "use strict";
-  const _sfc_main$c = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$d = /* @__PURE__ */ vue.defineComponent({
     __name: "login",
     setup(__props) {
       const login = () => {
@@ -74,8 +74,8 @@ if (uni.restoreGlobal) {
     }
     return target;
   };
-  const PagesLoginLogin = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["__scopeId", "data-v-e4e4508d"], ["__file", "E:/Project/realtime-chat/\u5B9E\u65F6\u804A\u5929/pages/login/login.vue"]]);
-  const _sfc_main$b = /* @__PURE__ */ vue.defineComponent({
+  const PagesLoginLogin = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["__scopeId", "data-v-e4e4508d"], ["__file", "E:/Project/realtime-chat/\u5B9E\u65F6\u804A\u5929/pages/login/login.vue"]]);
+  const _sfc_main$c = /* @__PURE__ */ vue.defineComponent({
     __name: "view-list",
     props: {
       infoList: { type: Array, required: true },
@@ -100,6 +100,7 @@ if (uni.restoreGlobal) {
                 class: "img-container"
               }, [
                 vue.createElementVNode("img", {
+                  class: "avatar",
                   src: info.img
                 }, null, 8, ["src"])
               ])) : vue.createCommentVNode("v-if", true),
@@ -150,8 +151,8 @@ if (uni.restoreGlobal) {
       };
     }
   });
-  const ViewList = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["__scopeId", "data-v-150ad610"], ["__file", "E:/Project/realtime-chat/\u5B9E\u65F6\u804A\u5929/components/common/view-list/view-list.vue"]]);
-  const _sfc_main$a = /* @__PURE__ */ vue.defineComponent({
+  const ViewList = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["__scopeId", "data-v-150ad610"], ["__file", "E:/Project/realtime-chat/\u5B9E\u65F6\u804A\u5929/components/common/view-list/view-list.vue"]]);
+  const _sfc_main$b = /* @__PURE__ */ vue.defineComponent({
     __name: "contacts",
     setup(__props) {
       const contacts = vue.reactive([
@@ -171,7 +172,7 @@ if (uni.restoreGlobal) {
       };
     }
   });
-  const __easycom_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["__file", "E:/Project/realtime-chat/\u5B9E\u65F6\u804A\u5929/components/contacts/contacts.vue"]]);
+  const __easycom_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["__file", "E:/Project/realtime-chat/\u5B9E\u65F6\u804A\u5929/components/contacts/contacts.vue"]]);
   function formatAppLog(type, filename, ...args) {
     if (uni.__log__) {
       uni.__log__(type, filename, ...args);
@@ -182,7 +183,7 @@ if (uni.restoreGlobal) {
   function resolveEasycom(component, easycom) {
     return shared.isString(component) ? easycom : component;
   }
-  const _sfc_main$9 = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$a = /* @__PURE__ */ vue.defineComponent({
     __name: "mine",
     setup(__props) {
       const logout = () => {
@@ -200,8 +201,8 @@ if (uni.restoreGlobal) {
       };
     }
   });
-  const __easycom_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__scopeId", "data-v-00c63ace"], ["__file", "E:/Project/realtime-chat/\u5B9E\u65F6\u804A\u5929/components/mine/mine.vue"]]);
-  const _sfc_main$8 = /* @__PURE__ */ vue.defineComponent({
+  const __easycom_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["__scopeId", "data-v-00c63ace"], ["__file", "E:/Project/realtime-chat/\u5B9E\u65F6\u804A\u5929/components/mine/mine.vue"]]);
+  const _sfc_main$9 = /* @__PURE__ */ vue.defineComponent({
     __name: "session",
     setup(__props) {
       const infoList = vue.reactive([
@@ -262,27 +263,8 @@ if (uni.restoreGlobal) {
       };
     }
   });
-  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["__file", "E:/Project/realtime-chat/\u5B9E\u65F6\u804A\u5929/components/session/session.vue"]]);
-  const _sfc_main$7 = {};
-  function _sfc_render$1(_ctx, _cache) {
-    return vue.openBlock(), vue.createElementBlock("view", { class: "app-header" }, [
-      vue.createCommentVNode(" \u81EA\u5B9A\u4E49\u5BFC\u822A\u680F\u65F6\uFF0C\u9876\u90E8\u4F1A\u9677\u5165\u5230\u72B6\u6001\u680F\uFF0C\u7528\u4E00\u4E2A\u7A7A\u7684\u5143\u7D20\u5360\u4F4D\uFF0Chttps://uniapp.dcloud.net.cn/collocation/pages.html#customnav "),
-      vue.createElementVNode("view", { class: "status-bar" }),
-      vue.createElementVNode("view", { class: "content" }, [
-        vue.createElementVNode("view", { class: "left" }, [
-          vue.renderSlot(_ctx.$slots, "left", {}, void 0, true)
-        ]),
-        vue.createElementVNode("view", { class: "title" }, [
-          vue.renderSlot(_ctx.$slots, "title", {}, void 0, true)
-        ]),
-        vue.createElementVNode("view", { class: "right" }, [
-          vue.renderSlot(_ctx.$slots, "right", {}, void 0, true)
-        ])
-      ])
-    ]);
-  }
-  const AppHeader = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$1], ["__scopeId", "data-v-7429e111"], ["__file", "E:/Project/realtime-chat/\u5B9E\u65F6\u804A\u5929/components/layout/app-header.vue"]]);
-  const _sfc_main$6 = /* @__PURE__ */ vue.defineComponent({
+  const __easycom_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["__file", "E:/Project/realtime-chat/\u5B9E\u65F6\u804A\u5929/components/session/session.vue"]]);
+  const _sfc_main$8 = /* @__PURE__ */ vue.defineComponent({
     __name: "iconfont",
     props: {
       name: { type: String, required: true },
@@ -297,8 +279,45 @@ if (uni.restoreGlobal) {
       };
     }
   });
-  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["__file", "E:/Project/realtime-chat/\u5B9E\u65F6\u804A\u5929/components/iconfont/iconfont.vue"]]);
-  const _sfc_main$5 = /* @__PURE__ */ vue.defineComponent({
+  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["__file", "E:/Project/realtime-chat/\u5B9E\u65F6\u804A\u5929/components/iconfont/iconfont.vue"]]);
+  const _sfc_main$7 = /* @__PURE__ */ vue.defineComponent({
+    __name: "app-header",
+    props: {
+      headerConfig: { type: null, required: true }
+    },
+    setup(__props) {
+      const props = __props;
+      return (_ctx, _cache) => {
+        const _component_iconfont = resolveEasycom(vue.resolveDynamicComponent("iconfont"), __easycom_0$1);
+        return vue.openBlock(), vue.createElementBlock("view", { class: "app-header" }, [
+          vue.createCommentVNode(" \u81EA\u5B9A\u4E49\u5BFC\u822A\u680F\u65F6\uFF0C\u9876\u90E8\u4F1A\u9677\u5165\u5230\u72B6\u6001\u680F\uFF0C\u7528\u4E00\u4E2A\u7A7A\u7684\u5143\u7D20\u5360\u4F4D\uFF0Chttps://uniapp.dcloud.net.cn/collocation/pages.html#customnav "),
+          vue.createElementVNode("view", { class: "status-bar" }),
+          vue.createElementVNode("view", { class: "content" }, [
+            (vue.openBlock(), vue.createElementBlock(vue.Fragment, null, vue.renderList(["left", "title", "right"], (key) => {
+              return vue.createElementVNode("view", {
+                key,
+                class: vue.normalizeClass(key)
+              }, [
+                props.headerConfig[key] ? (vue.openBlock(), vue.createElementBlock(vue.Fragment, { key: 0 }, [
+                  props.headerConfig[key].isIcon !== true ? (vue.openBlock(), vue.createElementBlock("text", {
+                    key: 0,
+                    onClick: props.headerConfig[key].onClick
+                  }, vue.toDisplayString(props.headerConfig[key].content), 9, ["onClick"])) : (vue.openBlock(), vue.createBlock(_component_iconfont, {
+                    key: 1,
+                    name: props.headerConfig[key].content,
+                    onClick: props.headerConfig[key].onClick,
+                    class: "app-header-icon"
+                  }, null, 8, ["name", "onClick"]))
+                ], 64)) : vue.createCommentVNode("v-if", true)
+              ], 2);
+            }), 64))
+          ])
+        ]);
+      };
+    }
+  });
+  const AppHeader = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["__scopeId", "data-v-7429e111"], ["__file", "E:/Project/realtime-chat/\u5B9E\u65F6\u804A\u5929/components/layout/app-header.vue"]]);
+  const _sfc_main$6 = /* @__PURE__ */ vue.defineComponent({
     __name: "app-bar",
     props: {
       onSwitch: { type: Function, required: false }
@@ -350,10 +369,11 @@ if (uni.restoreGlobal) {
       };
     }
   });
-  const AppBar = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["__scopeId", "data-v-0182d41e"], ["__file", "E:/Project/realtime-chat/\u5B9E\u65F6\u804A\u5929/components/layout/app-bar.vue"]]);
-  const _sfc_main$4 = /* @__PURE__ */ vue.defineComponent({
+  const AppBar = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["__scopeId", "data-v-0182d41e"], ["__file", "E:/Project/realtime-chat/\u5B9E\u65F6\u804A\u5929/components/layout/app-bar.vue"]]);
+  const _sfc_main$5 = /* @__PURE__ */ vue.defineComponent({
     __name: "layout",
     props: {
+      headerConfig: { type: null, required: true },
       onSwitch: { type: Function, required: false },
       appBarVisible: { type: Boolean, required: false }
     },
@@ -361,18 +381,9 @@ if (uni.restoreGlobal) {
       const props = __props;
       return (_ctx, _cache) => {
         return vue.openBlock(), vue.createElementBlock("view", { class: "layout" }, [
-          vue.createVNode(AppHeader, null, {
-            left: vue.withCtx(() => [
-              vue.renderSlot(_ctx.$slots, "left", {}, void 0, true)
-            ]),
-            title: vue.withCtx(() => [
-              vue.renderSlot(_ctx.$slots, "title", {}, void 0, true)
-            ]),
-            right: vue.withCtx(() => [
-              vue.renderSlot(_ctx.$slots, "right", {}, void 0, true)
-            ]),
-            _: 3
-          }),
+          vue.createVNode(AppHeader, {
+            "header-config": props.headerConfig
+          }, null, 8, ["header-config"]),
           vue.createElementVNode("view", {
             class: vue.normalizeClass({ "app-content": true, "no-app-bar": props.appBarVisible === false })
           }, [
@@ -386,8 +397,8 @@ if (uni.restoreGlobal) {
       };
     }
   });
-  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["__scopeId", "data-v-88c6ddf1"], ["__file", "E:/Project/realtime-chat/\u5B9E\u65F6\u804A\u5929/components/layout/layout.vue"]]);
-  const _sfc_main$3 = /* @__PURE__ */ vue.defineComponent({
+  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["__scopeId", "data-v-88c6ddf1"], ["__file", "E:/Project/realtime-chat/\u5B9E\u65F6\u804A\u5929/components/layout/layout.vue"]]);
+  const _sfc_main$4 = /* @__PURE__ */ vue.defineComponent({
     __name: "index",
     setup(__props) {
       const pageInfo = {
@@ -404,34 +415,66 @@ if (uni.restoreGlobal) {
           title: "\u6211\u7684"
         }
       };
+      const headerConfig = vue.reactive({
+        title: {
+          content: pageInfo.session.title
+        }
+      });
       const currentPageInfo = vue.ref(pageInfo.session);
       const switchComponent = (componentName) => {
         currentPageInfo.value = pageInfo[componentName];
+        headerConfig.title.content = pageInfo[componentName].title;
       };
       return (_ctx, _cache) => {
         const _component_contacts = resolveEasycom(vue.resolveDynamicComponent("contacts"), __easycom_0$2);
         const _component_mine = resolveEasycom(vue.resolveDynamicComponent("mine"), __easycom_1$1);
-        const _component_session = resolveEasycom(vue.resolveDynamicComponent("session"), __easycom_2);
-        const _component_layout = resolveEasycom(vue.resolveDynamicComponent("layout"), __easycom_1);
+        const _component_session = resolveEasycom(vue.resolveDynamicComponent("session"), __easycom_2$1);
+        const _component_layout = resolveEasycom(vue.resolveDynamicComponent("layout"), __easycom_2);
         return vue.openBlock(), vue.createBlock(_component_layout, {
           "on-switch": switchComponent,
+          "header-config": headerConfig,
           "app-bar-visible": ""
         }, {
-          title: vue.withCtx(() => [
-            vue.createElementVNode("text", null, vue.toDisplayString(currentPageInfo.value.title), 1)
-          ]),
-          right: vue.withCtx(() => [
-            currentPageInfo.value.component !== "mine" ? (vue.openBlock(), vue.createElementBlock("text", { key: 0 }, "\u53F3\u4FA7")) : vue.createCommentVNode("v-if", true)
-          ]),
           default: vue.withCtx(() => [
             currentPageInfo.value.component === "contacts" ? (vue.openBlock(), vue.createBlock(_component_contacts, { key: 0 })) : currentPageInfo.value.component === "mine" ? (vue.openBlock(), vue.createBlock(_component_mine, { key: 1 })) : (vue.openBlock(), vue.createBlock(_component_session, { key: 2 }))
           ]),
           _: 1
-        });
+        }, 8, ["header-config"]);
       };
     }
   });
-  const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["__file", "E:/Project/realtime-chat/\u5B9E\u65F6\u804A\u5929/pages/index/index.vue"]]);
+  const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["__file", "E:/Project/realtime-chat/\u5B9E\u65F6\u804A\u5929/pages/index/index.vue"]]);
+  const _sfc_main$3 = /* @__PURE__ */ vue.defineComponent({
+    __name: "message",
+    props: {
+      img: { type: String, required: true },
+      type: { type: String, required: true },
+      content: { type: String, required: true },
+      direction: { type: String, required: false }
+    },
+    setup(__props) {
+      const props = __props;
+      return (_ctx, _cache) => {
+        return vue.openBlock(), vue.createElementBlock("view", {
+          class: vue.normalizeClass(["message", props.direction === "right" ? "reverse" : ""])
+        }, [
+          vue.createElementVNode("view", null, [
+            vue.createElementVNode("img", {
+              class: "avatar",
+              src: props.img
+            }, null, 8, ["src"])
+          ]),
+          props.type === "text" || props.type === void 0 ? (vue.openBlock(), vue.createElementBlock("view", {
+            key: 0,
+            class: "message-container text-message"
+          }, [
+            vue.createElementVNode("text", null, vue.toDisplayString(props.content), 1)
+          ])) : vue.createCommentVNode("v-if", true)
+        ], 2);
+      };
+    }
+  });
+  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["__scopeId", "data-v-49e8e8fa"], ["__file", "E:/Project/realtime-chat/\u5B9E\u65F6\u804A\u5929/components/message/message.vue"]]);
   const _sfc_main$2 = {};
   function _sfc_render(_ctx, _cache) {
     const _component_iconfont = resolveEasycom(vue.resolveDynamicComponent("iconfont"), __easycom_0$1);
@@ -440,7 +483,7 @@ if (uni.restoreGlobal) {
         vue.createElementVNode("view", { class: "left" }, [
           vue.createElementVNode("view", { class: "icon-box" }, [
             vue.createVNode(_component_iconfont, {
-              name: "voice",
+              name: "84qiehuanyuyin",
               class: "chat-page-icon"
             })
           ])
@@ -455,26 +498,76 @@ if (uni.restoreGlobal) {
       vue.createElementVNode("view", { class: "addition" })
     ]);
   }
-  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render], ["__scopeId", "data-v-7713cc3c"], ["__file", "E:/Project/realtime-chat/\u5B9E\u65F6\u804A\u5929/components/chat-input/chat-input.vue"]]);
+  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render], ["__scopeId", "data-v-7713cc3c"], ["__file", "E:/Project/realtime-chat/\u5B9E\u65F6\u804A\u5929/components/chat-input/chat-input.vue"]]);
   const _sfc_main$1 = /* @__PURE__ */ vue.defineComponent({
     __name: "chat",
     setup(__props) {
       const back = () => {
         uni.navigateBack();
       };
+      const headerConfig = {
+        left: {
+          content: "left",
+          isIcon: true,
+          onClick: back
+        },
+        title: {
+          content: "\u8054\u7CFB\u4EBAA"
+        }
+      };
+      const messages = vue.reactive([
+        {
+          id: 1,
+          img: "https://lmg.jj20.com/up/allimg/tp09/210F2130512J47-0-lp.jpg",
+          type: "text",
+          content: "\u8FD9\u662F\u6D88\u606F\u5185\u5BB9"
+        },
+        {
+          id: 2,
+          img: "https://lmg.jj20.com/up/allimg/tp09/210F2130512J47-0-lp.jpg",
+          type: "text",
+          content: "\u8FD9\u662F\u6D88\u606F\u5185\u5BB9\u53EF\u4EE5\u5462\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u7684"
+        },
+        {
+          id: 3,
+          img: "https://lmg.jj20.com/up/allimg/tp09/210F2130512J47-0-lp.jpg",
+          direction: "right",
+          type: "text",
+          content: "\u8FD9\u662F\u6D88\u606F\u5185\u5BB9\u53EF\u4EE5\u5462\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u7684"
+        },
+        {
+          id: 4,
+          img: "https://lmg.jj20.com/up/allimg/tp09/210F2130512J47-0-lp.jpg",
+          direction: "right",
+          type: "text",
+          content: "\u53F3\u4FA7\u6D88\u606F"
+        },
+        {
+          id: 5,
+          img: "https://lmg.jj20.com/up/allimg/tp09/210F2130512J47-0-lp.jpg",
+          type: "text",
+          content: "\u8FD9\u662F\u6D88\u606F\u5185\u5BB9\u53EF\u4EE5\u5462\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u5F88\u957F\u7684"
+        }
+      ]);
       return (_ctx, _cache) => {
-        const _component_chat_input = resolveEasycom(vue.resolveDynamicComponent("chat-input"), __easycom_0);
-        const _component_layout = resolveEasycom(vue.resolveDynamicComponent("layout"), __easycom_1);
-        return vue.openBlock(), vue.createBlock(_component_layout, null, {
-          left: vue.withCtx(() => [
-            vue.createElementVNode("text", { onClick: back }, "\u8FD4\u56DE")
-          ]),
-          title: vue.withCtx(() => [
-            vue.createElementVNode("text", null, "\u8054\u7CFB\u4EBAA")
-          ]),
+        const _component_message = resolveEasycom(vue.resolveDynamicComponent("message"), __easycom_0);
+        const _component_chat_input = resolveEasycom(vue.resolveDynamicComponent("chat-input"), __easycom_1);
+        const _component_layout = resolveEasycom(vue.resolveDynamicComponent("layout"), __easycom_2);
+        return vue.openBlock(), vue.createBlock(_component_layout, { "header-config": headerConfig }, {
           default: vue.withCtx(() => [
             vue.createElementVNode("view", { class: "chat-container" }, [
-              vue.createElementVNode("view", { class: "chat-view" }, " \u804A\u5929\u7A97\u53E3 "),
+              vue.createElementVNode("scroll-view", {
+                "scroll-y": "true",
+                class: "chat-view"
+              }, [
+                vue.createElementVNode("view", { class: "message-box" }, [
+                  (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(messages, (message) => {
+                    return vue.openBlock(), vue.createBlock(_component_message, vue.mergeProps({
+                      key: message.id
+                    }, message), null, 16);
+                  }), 128))
+                ])
+              ]),
               vue.createElementVNode("view", { class: "operation-area" }, [
                 vue.createVNode(_component_chat_input)
               ])

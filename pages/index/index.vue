@@ -1,23 +1,17 @@
 <template>
 	<layout
     :on-switch="switchComponent"
+    :header-config="headerConfig"
     app-bar-visible
   >
     <contacts v-if="currentPageInfo.component === 'contacts'"></contacts>
     <mine v-else-if="currentPageInfo.component === 'mine'"></mine>
     <session v-else></session>
-    
-    <template #title>
-      <text>{{ currentPageInfo.title }}</text>
-    </template>
-    <template #right>
-      <text v-if="currentPageInfo.component !== 'mine'">右侧</text>
-    </template>
 	</layout>
 </template>
 
 <script lang="ts" setup>
-  import { ref } from 'vue';
+  import { ref, reactive } from 'vue';
   
   const pageInfo = {
     session: {
@@ -33,12 +27,17 @@
       title: '我的',
     }
   };
+  const headerConfig = reactive({
+    title: {
+      content: pageInfo.session.title,
+    }
+  });
   const currentPageInfo = ref(pageInfo.session);
   
   const switchComponent = (componentName: string) => {
     currentPageInfo.value = pageInfo[componentName];
+    headerConfig.title.content = pageInfo[componentName].title;
   };
-  
 </script>
 
 <style>

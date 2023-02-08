@@ -42,7 +42,9 @@
         padding: 8rpx;
         
         input {
+          padding: $pd1 0;
           margin: $pd2 0;
+          height: auto;
           border-bottom: 1px solid $uni-border-color;
         }
       }
