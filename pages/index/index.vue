@@ -12,6 +12,7 @@
 
 <script lang="ts" setup>
   import { ref, reactive } from 'vue';
+  import { UserForClient } from '../../business/user';
   
   const pageInfo = {
     session: {
@@ -38,6 +39,8 @@
     currentPageInfo.value = pageInfo[componentName];
     headerConfig.title.content = pageInfo[componentName].title;
   };
+  
+  console.log(UserForClient.getUserBaseInfoFromLocal());
 </script>
 
 <style>

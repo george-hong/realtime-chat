@@ -35,7 +35,8 @@
         background: greenyellow;
         
         &::after {
-          left: 100%;
+          left: 100%
+          ;
           border-color: transparent transparent transparent greenyellow;
         }
       }
