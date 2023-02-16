@@ -33,13 +33,13 @@
   import { UserForClient } from '../../business/user';
   import Secret, { SecretType } from '../../libs/secret';
   import toast from '../../libs/toast';
-  
+
   const accountInfo = reactive({
     account: 'test',
     password: '1234567890',
   });
   let RSAPublicKey;
-  
+
   onMounted(() => {
     requestToGetRSAPublicKey()
       .then(response => {
@@ -49,18 +49,18 @@
       .catch(err => {
         console.log('err', err);
       });
-      
+
     uni.showToast({
       title: '错误',
     })
   });
-  
+
   const login = () => {
     const loginInfo = {
       account: accountInfo.account,
       password: accountInfo.password,
     };
-    
+
     loginInfo.password = Secret.encode(loginInfo.password, { type: SecretType.SHA256 });
     loginInfo.password = Secret.encode(
       loginInfo.password,
@@ -69,7 +69,8 @@
         key: RSAPublicKey,
       }
     );
-    
+    console.log('start');
+
     requestToSignIn(loginInfo)
       .then(response => {
         UserForClient.saveSignInInfoToLocal(response);
@@ -80,7 +81,7 @@
         console.log('err', err);
       });
   };
-  
+
   const redirectToIndexPage = () => {
     uni.redirectTo({
       url: '/pages/index/index',
@@ -95,16 +96,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     .login-window {
       width: 70%;
       padding: $pd3;
       background: #FFF;
       border-radius: 10rpx;
-      
+
       .input-area {
         padding: 8rpx;
-        
+
         input {
           padding: $pd1 0;
           margin: $pd2 0;
@@ -112,10 +113,10 @@
           border-bottom: 1px solid $uni-border-color;
         }
       }
-      
+
       .button-area {
         padding: $pd2 0;
-        
+
         button {
           border: none;
           background: $uni-color-primary;

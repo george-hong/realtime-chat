@@ -11,9 +11,10 @@
 </template>
 
 <script lang="ts" setup>
-  import { ref, reactive } from 'vue';
+  import { ref, reactive, onMounted } from 'vue';
   import { UserForClient } from '../../business/user';
-  
+  import PROJECT_CONFIG from '../../config/project';
+
   const pageInfo = {
     session: {
       component: 'session',
@@ -34,12 +35,30 @@
     }
   });
   const currentPageInfo = ref(pageInfo.session);
-  
+
   const switchComponent = (componentName: string) => {
     currentPageInfo.value = pageInfo[componentName];
     headerConfig.title.content = pageInfo[componentName].title;
   };
-  
+
+  const initSocket = () => {
+    uni.connectSocket({
+      url: PROJECT_CONFIG.CLIENT_SOCKET_BASE_URL + '/chat',
+    });
+    uni.onSocketOpen(function (res) {
+      console.log('WebSocket连接已打开！', res);
+    });
+    uni.onSocketError(function (res) {
+      console.log('WebSocket连接打开失败，请检查！');
+    });
+  };
+
+  onMounted(() => {
+    console.log('mounted');
+
+    initSocket();
+  });
+
   console.log(UserForClient.getUserBaseInfoFromLocal());
 </script>
 

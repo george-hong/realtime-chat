@@ -145,13 +145,15 @@ if (uni.restoreGlobal) {
     }
   }
   const PROTOCOL = "http";
-  const HOST = "192.168.0.106";
+  const WS_PROTOCOL = "ws";
+  const HOST = "192.168.0.105";
   const PORT = "4000";
   const PROJECT_CONFIG = {
     PROTOCOL,
     HOST,
     PORT,
-    CLIENT_BASE_URL: `${PROTOCOL + "://"}${HOST}${":" + PORT}`
+    CLIENT_BASE_URL: `${PROTOCOL + "://"}${HOST}${":" + PORT}`,
+    CLIENT_SOCKET_BASE_URL: `${WS_PROTOCOL + "://"}${HOST}${":" + PORT}`
   };
   const REQUEST_DEFAULT_ERROR_MESSAGE = "\u672A\u77E5\u5F02\u5E38";
   const TOKEN_FIELD = "token";
@@ -17618,6 +17620,24 @@ if (uni.restoreGlobal) {
       return illegal;
     }
   }
+  const typeMapping = {
+    success: "success",
+    error: "error",
+    info: "none"
+  };
+  const toast = (message, options = {}) => {
+    uni.showToast({
+      title: message,
+      icon: typeMapping[options.type || "info"],
+      duration: 3e3
+    });
+  };
+  var ToastType = /* @__PURE__ */ ((ToastType2) => {
+    ToastType2["success"] = "success";
+    ToastType2["error"] = "error";
+    ToastType2["info"] = "info";
+    return ToastType2;
+  })(ToastType || {});
   const localClientRequest = new Request({
     baseURL: PROJECT_CONFIG.CLIENT_BASE_URL
   });
@@ -17637,6 +17657,7 @@ if (uni.restoreGlobal) {
   });
   localClientRequest.interceptors.response.use(void 0, (response) => {
     const message = (response == null ? void 0 : response.message) || REQUEST_DEFAULT_ERROR_MESSAGE;
+    toast(message, { type: ToastType.error });
     formatAppLog("log", "at libs/request/index.ts:25", "msg", message);
     return response;
   });
@@ -17655,18 +17676,6 @@ if (uni.restoreGlobal) {
     };
     return clientRequest.post("/api/user/sign-in", requestParams);
   }
-  const typeMapping = {
-    success: "success",
-    error: "error",
-    info: "none"
-  };
-  const toast = (message, options = {}) => {
-    uni.showToast({
-      title: message,
-      icon: typeMapping[options.type || "info"],
-      duration: 3e3
-    });
-  };
   const _sfc_main$d = /* @__PURE__ */ vue.defineComponent({
     __name: "login",
     setup(__props) {
@@ -17699,12 +17708,13 @@ if (uni.restoreGlobal) {
             key: RSAPublicKey2
           }
         );
+        formatAppLog("log", "at pages/login/login.vue:72", "start");
         requestToSignIn(loginInfo).then((response) => {
           UserForClient.saveSignInInfoToLocal(response);
           redirectToIndexPage();
         }).catch((err) => {
           toast("\u767B\u5F55\u5931\u8D25", { type: "success" });
-          formatAppLog("log", "at pages/login/login.vue:80", "err", err);
+          formatAppLog("log", "at pages/login/login.vue:81", "err", err);
         });
       };
       const redirectToIndexPage = () => {
@@ -18094,7 +18104,22 @@ if (uni.restoreGlobal) {
         currentPageInfo.value = pageInfo[componentName];
         headerConfig.title.content = pageInfo[componentName].title;
       };
-      formatAppLog("log", "at pages/index/index.vue:43", UserForClient.getUserBaseInfoFromLocal());
+      const initSocket = () => {
+        uni.connectSocket({
+          url: PROJECT_CONFIG.CLIENT_SOCKET_BASE_URL + "/chat"
+        });
+        uni.onSocketOpen(function(res) {
+          formatAppLog("log", "at pages/index/index.vue:49", "WebSocket\u8FDE\u63A5\u5DF2\u6253\u5F00\uFF01", res);
+        });
+        uni.onSocketError(function(res) {
+          formatAppLog("log", "at pages/index/index.vue:52", "WebSocket\u8FDE\u63A5\u6253\u5F00\u5931\u8D25\uFF0C\u8BF7\u68C0\u67E5\uFF01");
+        });
+      };
+      vue.onMounted(() => {
+        formatAppLog("log", "at pages/index/index.vue:57", "mounted");
+        initSocket();
+      });
+      formatAppLog("log", "at pages/index/index.vue:62", UserForClient.getUserBaseInfoFromLocal());
       return (_ctx, _cache) => {
         const _component_contacts = resolveEasycom(vue.resolveDynamicComponent("contacts"), __easycom_0$2);
         const _component_mine = resolveEasycom(vue.resolveDynamicComponent("mine"), __easycom_1$1);
